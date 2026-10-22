@@ -7,3 +7,5 @@
 5. Label rule A: churned = 1 if no purchase in the window. 539 of 1,798 churned (30%). Later: try the stricter Project 1 rule (B) and compare models.
 6. Metrics: recall, precision, ROC-AUC. Accuracy is misleading (a "nobody churns" model scores ~70%).
 7. Feature plan (history only): recency, frequency (+ recent vs earlier), monetary (total, average order, + recent vs earlier), variety (distinct StockCodes), usual gap between orders.
+8. avg_order (total spend / number of orders) is right-skewed (median 316, max 6,819). Keep as is for now; revisit if we use linear models.
+

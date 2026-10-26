@@ -1,6 +1,7 @@
 # Churn Prediction: Which Customers Are About to Leave?
 
-**Live demo:** https://churn-radar-mohamad.streamlit.app/
+**Live demo:** https://churn-radar-mohamad.streamlit.app/ 
+![Churn Radar app](images/app_screenshot.png)
 
 ## Problem
 A retailer loses regular customers silently. If we can spot who is likely to stop buying, the team can contact them before they leave.
@@ -9,7 +10,7 @@ A retailer loses regular customers silently. If we can spot who is likely to sto
 Predict which regular customers (5+ orders) will make **no purchase in the next 90 days**.
 
 ## Data
-UCI Online Retail II (about 1M transactions, Dec 2009 to Dec 2011), cleaned in Project 1.
+UCI Online Retail II (about 1M transactions, Dec 2009 to Dec 2011), cleaned in [Project 1: Retail Sales Analysis](https://github.com/mohamadsfares/retail-sales-analysis).
 
 ## Method
 1. **Label without leakage:** cutoff date 2011-09-09. Features use only history before the cutoff. Churned = 1 if no purchase in the 90 days after it. 539 of 1,798 regular customers churned (30%).

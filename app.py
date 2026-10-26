@@ -18,7 +18,6 @@ data = pd.read_csv("data/model_data.csv", index_col=0)
 data["risk"] = model.predict_proba(data[features])[:, 1]
 data["high_risk"] = data["risk"] > threshold
 typical = data[features].median()
-new = typical.copy()
 st.title("Which customers are about to leave?")
 st.write("Estimates which regular customers (5+ orders) may stop buying in the next 90 days.")
 k1, k2, k3 = st.columns(3)
@@ -68,8 +67,8 @@ st.dataframe(
         "recent_spend": st.column_config.NumberColumn("Spend in last 90 days", format="%.0f"),
     },
 )
-flagged = data[data["high_risk"]].sort_values("risk", ascending=False)                       # NEW
-st.download_button("Download flagged customers (CSV)",                                      # NEW
+flagged = data[data["high_risk"]].sort_values("risk", ascending=False)                       
+st.download_button("Download flagged customers (CSV)",                                      
                    flagged[["risk", "recency", "usual_gap", "recent_spend"]].to_csv(),
                    "flagged_customers.csv", "text/csv")
 st.caption("Demo on historical data. The model reached ROC-AUC 0.75 on held-out customers; risk scores here are for customers it was trained on, so they look slightly better than for new customers.")

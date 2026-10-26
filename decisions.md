@@ -25,4 +25,5 @@
 25. FINAL TEST (used once): tuned random forest (max_depth=8, min_samples_leaf=20, 200 trees, 10 features) ROC-AUC 0.754 on the 360 held-out customers (CV 0.773). Chosen over logistic regression (CV 0.763).
 26. Threshold chosen on out-of-fold train probabilities (not test): t = 0.3 gives recall 0.76 / precision 0.47. Chosen because retention offers are cheap compared with losing a regular customer, so catching 3 of 4 churners is worth contacting some loyal customers. The threshold is a business setting and can be changed.
 27. FINAL RESULT (test, threshold 0.3): churn recall 0.75, precision 0.47, ROC-AUC 0.754, versus baseline recall 0 / precision 0. Model flags ~3 of 4 churners; about half the flagged customers are false alarms.
+28. Verified saved bundle (models/churn_model.joblib): reloaded model, feature list and threshold reproduce the final test exactly (ROC-AUC 0.754, recall 0.75, precision 0.47 at t=0.3).
 
